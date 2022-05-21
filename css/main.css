@@ -1,0 +1,114 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    
+    font-size: 14px;
+    line-height: 20px;
+    font-family: Verdana, sans-serif;
+    color: #000000;
+    
+    background-color: #cfcfcf;
+}
+
+input {
+	text-align: center;
+	width: 90%;
+	height: 30px;
+	border-radius: 30px;
+	background-color: #5c5c5c;
+	color: #ffffff;
+}
+.header {
+    display: flex;
+}
+
+.header .left{
+    position: absolute;
+    left: 0px;
+    background-color: #452687;
+    border-radius: 30px;
+    color: #ffffff;
+    margin: 20px;
+}
+
+.header .right {
+    position: absolute;
+    right: 0px;
+	background-color: #452687;
+    border-radius: 30px;
+    color: #ffffff;
+    margin: 20px;
+}
+
+.table {
+    position: absolute;
+    margin-bottom: 60px;
+    left: 150px;
+}
+
+.main button {
+	background-color: #452687;
+    border-radius: 30px;
+    text-align: center;
+    width: 180px;
+    height: 60px;
+    margin: 20px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.main button:hover {
+	width: 200px;
+    letter-spacing: 5px;
+}
+
+p {
+    background-color: #452687;
+    border-radius: 30px;
+    text-align: center;
+    width: 180px;
+    height: auto;
+    margin: 10px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(6em + 80px);
+}
+
+.center button {
+    position: fixed;
+    bottom: 0px;
+    background-color: #452687;
+    border-radius: 30px;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+table {
+   border: 1px solid grey;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+   border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+   border: 1px solid grey;
+}

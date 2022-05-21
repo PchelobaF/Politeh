@@ -1,0 +1,77 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    
+    font-size: 14px;
+    line-height: 20px;
+    font-family: Verdana, sans-serif;
+    color: #000000;
+    
+    background-color: #cfcfcf;
+}
+
+header {
+    position: absolute;
+    left: 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #452687;
+    border-radius: 30px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+main {
+    width: calc(6em + 80px);
+    position: absolute;
+    margin-top: 180px;
+    left: 100px;
+}
+
+main div {
+    margin-bottom: 60px;
+}
+
+.center {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(6em + 80px);
+}
+
+a {
+    position: fixed;
+    bottom: 0px;
+    background-color: #452687;
+    border-radius: 30px;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+table {
+   border: 1px solid grey;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+   border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+   border: 1px solid grey;
+}
