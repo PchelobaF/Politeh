@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+	<link rel="stylesheet" href="css/galery.css">
+	<title>Эдельвейс</title>
+</head>
+<body>
+	<div class="main-menu">
+		<ul class="menu">
+			<div class="toggle">
+				<ion-icon name="add-outline"></ion-icon>
+			</div>
+				<li style="--i:0;"><a href="kotalog.php"><ion-icon name="layers-outline"></ion-icon></a></li>
+				<li style="--i:1;"><a href="glav.php"><ion-icon name="home-outline"></ion-icon></a></li>
+				<li style="--i:2;"><a href="company.php"><ion-icon name="trophy-outline"></ion-icon></a></li>
+				<li style="--i:3;"><a href="vse labi.php"><ion-icon name="map-outline"></ion-icon></a></li>
+				<li style="--i:4;"><a href="contact.php"><ion-icon name="call-outline"></ion-icon></a></li>
+				<li style="--i:5;"><a href="https://vk.com/cheburashka360"><ion-icon name="megaphone-outline"></ion-icon></a></li>
+			<div class="indicator"></div>
+		</ul>
+	</div>
+
+<script type="text/javascript">
+	let menuToggle = document.querySelector('.toggle');
+	let menu = document.querySelector('.menu');
+	menuToggle.onclick = function(){
+		menu.classList.toggle('active')
+		menuToggle.classList.toggle('active')
+	}
+
+	const list = document.querySelectorAll('li');
+	function activeLink(){
+		list.forEach((item) => item.classList.remove('active'));
+		this.classList.add('active')
+	}
+	list.forEach((item) => item.addEventListener('click', activeLink))
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+	<div class="description">
+		<div class="title">
+			Галерея
+		</div>
+		<p>Для лабораторной работы №3 по интернет программированию</p>
+	</div>
+	<div class="swiper slider slider_main">
+		<div class="swiper-wrapper slier__wrapper">
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/3.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/2.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/1.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/4.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/5.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/6.jpg)"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="swiper slider slider_bg">
+		<div class="swiper-wrapper slier__wrapper">
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/3.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/2.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/1.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/4.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/5.jpg)"></div>
+			</div>
+			<div class="swiper-slide slider__item">
+				<div class="slider__img" data-swiper-parallax="20%" style="background-image: url(img/6.jpg)"></div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="js/galery.js"></script>
+</body>
+</html>

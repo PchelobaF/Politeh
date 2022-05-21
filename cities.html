@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Список городов</title>
+	<link rel="stylesheet" type="text/css" href="css/cities.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+	<header>
+		
+	</header>
+	<main>
+		<div id="table">
+
+		</div>
+	</main>
+	<footer>
+		<div class="center">
+			<a href="main.html">Назад</a>
+		</div>
+	</footer>
+<script type="text/javascript">
+	let a = ["а","б","в","г","д","е","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ы","э","ю","я"];
+	var index;
+
+	async function slovar() {
+		document.getElementById('table').innerHTML = "";
+		let a = ["а","б","в","г","д","е","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ы","э","ю","я"];
+		let bukva = a[event.srcElement.id];
+		var index;
+		let result = await eel.cities(bukva)();
+		let table = document.createElement('table');
+		let thead = document.createElement('thead');
+		let tbody = document.createElement('tbody');
+		table.appendChild(thead);
+		table.appendChild(tbody);
+		document.getElementById('table').appendChild(table);
+		let row_1 = document.createElement('tr');
+		let heading_1 = document.createElement('th');
+		heading_1.innerHTML = "id";
+		let heading_2 = document.createElement('th');
+		heading_2.innerHTML = "Город";
+		row_1.appendChild(heading_1);
+		row_1.appendChild(heading_2);
+		thead.appendChild(row_1);
+
+		for (index = 0; index < result.length; ++index) {
+			let row_2 = document.createElement('tr');
+			let row_2_data_1 = document.createElement('td');
+			row_2_data_1.innerHTML = index+1;
+			let row_2_data_2 = document.createElement('td');
+			row_2_data_2.innerHTML = result[index];
+
+			row_2.appendChild(row_2_data_1);
+			row_2.appendChild(row_2_data_2);
+			tbody.appendChild(row_2);
+		}
+	}
+	for (index = 0; index < a.length; ++index) {
+    	const button = document.createElement('button');
+		button.innerHTML = a[index];
+		button.id = index
+		button.onclick = slovar;
+		document.querySelector('header').append(button);
+	}
+</script>
+</body>
+</html>

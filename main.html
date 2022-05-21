@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Игра в слова</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+	<header class="header">
+		<!-- <a href="cities.html">Все города</a> -->
+		<button class="right" onclick="vse_goroda()">Все города</button>
+		<button class="left" onclick="zanovo()">Начать заново</button>
+	</header>
+	<main class="main">
+		<div align="center">
+			<h2>Города</h2>
+			<div>
+				<input type="text" id="id" placeholder="Город"><br>
+				<button id="city" onclick="city()">Ввод</button>
+				<p id="result"></p>
+				<div class="perehod">
+					<p id="perehod"></p>
+				</div>
+			</div>
+		</div>
+		<div class="table" id="table">
+
+		</div>
+	</main>
+	<footer>
+		<div class="center">
+			<button id="city" onclick="slova()">Выбывшие слова</button>
+		</div>
+	</footer>
+
+<script type="text/javascript">
+	var goroda = 0;
+
+	async function slova() {
+		let index;
+		document.getElementById('table').innerHTML = "";
+		let table = document.createElement('table');
+		let thead = document.createElement('thead');
+		let tbody = document.createElement('tbody');
+		table.appendChild(thead);
+		table.appendChild(tbody);
+		document.getElementById('table').appendChild(table);
+		let row_1 = document.createElement('tr');
+		let heading_1 = document.createElement('th');
+		heading_1.innerHTML = "id";
+		let heading_2 = document.createElement('th');
+		heading_2.innerHTML = "Город";
+		row_1.appendChild(heading_1);
+		row_1.appendChild(heading_2);
+		thead.appendChild(row_1);
+		let slova = await eel.isp()();
+
+		for (index = 0; index < slova.length; ++index) {
+			let row_2 = document.createElement('tr');
+			let row_2_data_1 = document.createElement('td');
+			row_2_data_1.innerHTML = index+1;
+			let row_2_data_2 = document.createElement('td');
+			row_2_data_2.innerHTML = slova[index];
+
+			row_2.appendChild(row_2_data_1);
+			row_2.appendChild(row_2_data_2);
+			tbody.appendChild(row_2);
+		}
+	}
+
+	async function city() {
+		let city = document.getElementById('id').value;
+		if (city == "привет андрей") {
+			goroda = 1;
+		}
+		let result = await eel.cities_read(city)();
+		document.getElementById('result').innerHTML = result;
+		document.getElementById('id').value = '';
+		document.getElementById('perehod').innerHTML = await eel.posl()();
+	}
+
+	async function zanovo() {
+		document.getElementById('table').innerHTML = "";
+		await eel.zanovo()();
+		document.getElementById('result').innerHTML = '';
+		document.getElementById('perehod').innerHTML = '';
+	}
+
+	async function vse_goroda() {
+		if (goroda == 1) {
+			window.location.href='cities.html';
+		}else {
+			document.getElementById('result').innerHTML = "Нет доступа";
+		}
+	}
+</script>
+</body>
+</html>
